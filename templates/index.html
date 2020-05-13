@@ -1,0 +1,17 @@
+<html>
+   <body>
+        <form action = "/detect_faces" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file"  multiple="multiple"/>
+         <input type = "submit"> Detect Faces </input>
+        </form>
+        <form action = "/add_face" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file"  multiple="multiple"/>
+         <input type = "submit"> Add Face </input>
+      </form>
+        <form action="/list_of_faces" method="post">
+          <button name="list_of_faces" type="submit"> List of Faces</button>
+        </form>
+   </body>
+</html>

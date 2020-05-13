@@ -12,7 +12,7 @@ CORS(app)
 
 @app.route('/upload')
 def upload_file():
-    return render_template('DetectFaces.html')
+    return render_template('index.html')
 
 @app.route('/add_face', methods=['GET', 'POST'])
 def add_face_in_collection():
