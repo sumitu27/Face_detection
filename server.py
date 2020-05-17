@@ -6,11 +6,12 @@ from add_face_in_collection import add_faces_to_collection
 from s3_bucket import store_image_into_s3_bucket
 from show_list_of_faces import list_faces_in_collection
 from detect_faces_from_image import detect_faces_in_image
+from collection_for_face import create_collection, delete_collection
 
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/upload')
+@app.route('/')
 def upload_file():
     return render_template('index.html')
 
@@ -52,5 +53,23 @@ def detect_faces():
 
     return jsonify(return_response)
 
+@app.route('/create_face_collection', methods=['GET', 'POST'])
+def create_face_collection():
+
+    collection_id = 'family_collection'
+    status_code = create_collection(collection_id)
+    print('Status code: ' + str(status_code))
+
+    return str(status_code)
+
+@app.route('/delete_face_collection', methods=['GET', 'POST'])
+def delete_face_collection():
+
+    collection_id = 'family_collection'
+    status_code = delete_collection(collection_id)
+    print('Status code: ' + str(status_code))
+
+    return str(status_code)
+
 if __name__ == '__main__':
-    app.run(debug=True, port="1001", host="0.0.0.0")
+    app.run(debug=True, port="5005", host="0.0.0.0")

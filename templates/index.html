@@ -9,9 +9,15 @@
          enctype = "multipart/form-data">
          <input type = "file" name = "file"  multiple="multiple"/>
          <input type = "submit"> Add Face </input>
-      </form>
+        </form>
+        <form action="/create_face_collection" method="post">
+          <button name="create_face_collection" type="submit"> Create Face Collection</button>
+        </form>
         <form action="/list_of_faces" method="post">
           <button name="list_of_faces" type="submit"> List of Faces</button>
+        </form>
+        <form action="/delete_face_collection" method="post">
+              <button name="delete_face_collection" type="submit"> Delete Face Collection</button>
         </form>
    </body>
 </html>
