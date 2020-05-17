@@ -1,19 +1,19 @@
 <html>
    <body>
-        <form action = "/detect_faces" method = "POST"
+        <form action = "/dev/detect_faces" method = "POST"
          enctype = "multipart/form-data">
          <input type = "file" name = "file"  multiple="multiple"/>
          <input type = "submit"> Detect Faces </input>
         </form>
-        <form action = "/add_face" method = "POST"
+        <form action = "/dev/add_face" method = "POST"
          enctype = "multipart/form-data">
          <input type = "file" name = "file"  multiple="multiple"/>
          <input type = "submit"> Add Face </input>
         </form>
-        <form action="/create_face_collection" method="post">
+        <form action="/dev/create_face_collection" method="post">
           <button name="create_face_collection" type="submit"> Create Face Collection</button>
         </form>
-        <form action="/list_of_faces" method="post">
+        <form action="/dev/list_of_faces" method="post">
           <button name="list_of_faces" type="submit"> List of Faces</button>
         </form>
         <form action="/delete_face_collection" method="post">
