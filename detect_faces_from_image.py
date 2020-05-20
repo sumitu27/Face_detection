@@ -28,6 +28,8 @@ def detect_faces_in_image(photo, bucket, upload_file_name):
         face_identified = search_face_with_name(crop_file_name)
         if face_identified.strip():
             image = cv2.rectangle(image, start_point, end_point, (0, 255, 0), 3)
+            image = cv2.putText(image, face_identified, start_point, cv2.FONT_HERSHEY_SIMPLEX ,
+                                0.5, (255, 0, 0), 2, cv2.LINE_AA)
             return_response.append(face_identified)
         else:
             image = cv2.rectangle(image, start_point, end_point, (0, 0, 255), 3)
