@@ -36,7 +36,10 @@ def list_of_faces():
 
     faces_count = list_faces_in_collection(collection_id)
 
-    return jsonify(faces_count)
+    if isinstance(faces_count,str):
+        return faces_count
+    else:
+        return jsonify(faces_count)
 
 
 @app.route('/dev/detect_faces', methods=['GET', 'POST'])
